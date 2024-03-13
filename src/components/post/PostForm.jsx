@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Button, Input, Select, RTE } from "../c_index";
+import { Button, Input, Select } from "../c_index"; //  RTE
 import { useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import appwriteService from "../../appwrite/config";
@@ -8,21 +8,20 @@ import { useSelector } from "react-redux";
 import propTypes from "prop-types";
 
 export default function PostForm({ post }) {
-  const { register, handleSubmit, watch, setValue, control, getValues } =
-    useForm({
-      defaultValues: {
-        title: post?.title || "",
-        slug: post?.slug || "",
-        content: post?.content || "",
-        status: post?.status || "active",
-      },
-    });
+  const { register, handleSubmit, watch, setValue } = useForm({
+    // ,
+    defaultValues: {
+      title: post?.title || "",
+      slug: post?.slug || "",
+      status: post?.status || "active",
+    },
+  });
 
   const navigate = useNavigate();
   const userData = useSelector((state) => state.userData);
-  console.log("postform 26:: ", userData);
 
   const submit = async (data) => {
+    console.log(data);
     if (post) {
       const file = data.image[0]
         ? appwriteService.uploadFile(data.image[0])
@@ -93,12 +92,19 @@ export default function PostForm({ post }) {
             });
           }}
         />
-        <RTE
+        {/* <textarea
+          label="Content :"
+          name="content"
+          // control={control}
+          defaultValue={getValues("content")}
+          className="h-auto max-w-xl bg-green-300"
+        ></textarea> */}
+        {/* <RTE
           label="Content :"
           name="content"
           control={control}
           defaultValue={getValues("content")}
-        />
+        /> */}
       </div>
       <div className="w-1/3 px-2">
         <Input

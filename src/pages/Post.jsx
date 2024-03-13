@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import appwriteService from "../appwrite/config";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import parse from "html-react-parser";
 import { useSelector } from "react-redux";
 import { Button, Container } from "../components/c_index";
 
@@ -60,10 +59,9 @@ export default function Post() {
         </div>
         <div className="flex items-center justify-center flex-col h-auto">
           <div className="mb-6">
-            <h1 className="text-lg text-gray-700 font-bold">{post.title}</h1>
-          </div>
-          <div className="text-orange-500 hover:text-orange-700">
-            {parse(post.content)}
+            <h1 className="text-lg text-gray-700 font-semibold">
+              {post.title}
+            </h1>
           </div>
         </div>
       </Container>

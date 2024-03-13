@@ -21,7 +21,7 @@ export default function AllPosts() {
               src={appwriteService.getFilePreview(post.featuredImage)}
               alt={post.title}
             />
-            <h2 className="text-xl font-semibold overflow-hidden text-gray-700 whitespace-nowrap overflow-ellipsis">
+            <h2 className="text-lg font-semibold overflow-hidden text-gray-700 whitespace-nowrap overflow-ellipsis">
               {post.title}
             </h2>
           </div>

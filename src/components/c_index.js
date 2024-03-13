@@ -7,7 +7,6 @@ import Button from "./Button";
 import Input from "./Input";
 import Logo from "./Logo";
 import Login from "./Login";
-import RTE from "./RTE";
 import Select from "./Select";
 import Signup from "./Signup";
 import LogoutBtn from "./Header/LogoutBtn";
@@ -23,7 +22,6 @@ export {
   Input,
   Login,
   Logo,
-  RTE,
   Select,
   Signup,
 };

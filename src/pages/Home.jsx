@@ -77,7 +77,7 @@ export default function Home() {
               src={appwriteService.getFilePreview(post.featuredImage)}
               alt={post.title}
             />
-            <h2 className="text-xl font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
+            <h2 className="text-lg font-bold overflow-hidden whitespace-nowrap overflow-ellipsis">
               {post.title}
             </h2>
           </div>
